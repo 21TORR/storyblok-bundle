@@ -1,3 +1,9 @@
+3.15.0
+======
+
+* (feature) Add integration for app validation from the hosting bundle.
+
+
 3.14.3
 ======
 
