@@ -6,6 +6,7 @@
 * (feature) Parse all supported types of webhooks and dispatch them as events.
 * (feature) Add automatic asset proxy.
 * (feature) Add ability to clear asset storage via CLI via `storyblok:assets:clear-proxy-storage`.
+* (improvement) Add asset proxy stats to debug command.
 
 
 3.15.0

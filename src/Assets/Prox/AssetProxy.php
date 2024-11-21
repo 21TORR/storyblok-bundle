@@ -131,4 +131,12 @@ readonly class AssetProxy
 	{
 		$this->filesystem->remove($this->storagePath);
 	}
+
+	/**
+	 *
+	 */
+	public function getStoragePath () : string
+	{
+		return $this->storagePath;
+	}
 }

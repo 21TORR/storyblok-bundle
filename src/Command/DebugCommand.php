@@ -6,9 +6,11 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
 use Torr\Cli\Console\Style\TorrStyle;
 use Torr\Storyblok\Api\ContentApi;
 use Torr\Storyblok\Api\ManagementApi;
+use Torr\Storyblok\Assets\Proxy\AssetProxy;
 use Torr\Storyblok\Exception\Component\UnknownComponentKeyException;
 use Torr\Storyblok\Exception\StoryblokException;
 use Torr\Storyblok\Manager\ComponentManager;
@@ -30,6 +32,7 @@ final class DebugCommand extends Command
 		private readonly ContentApi $contentApi,
 		private readonly ManagementApi $managementApi,
 		private readonly ComponentManager $componentManager,
+		private readonly AssetProxy $assetProxy,
 	)
 	{
 		parent::__construct();
@@ -62,6 +65,7 @@ final class DebugCommand extends Command
 			$io->newLine();
 
 			$this->showComponentsOverview($io);
+			$this->showAssetProxyStats($io);
 
 			return self::SUCCESS;
 		}
@@ -184,5 +188,46 @@ final class DebugCommand extends Command
 		{
 			return null;
 		}
+	}
+
+	private function showAssetProxyStats (TorrStyle $io) : void
+	{
+		$io->section("Asset Proxy");
+
+		[$filesCount, $totalStorage] = $this->findProxiedAssetStats();
+
+		$io->writeln(\sprintf(
+			"<fg=yellow>Total number of proxied assets:</> %d",
+			$filesCount,
+		));
+		$io->writeln(\sprintf(
+			"<fg=yellow>Total storage of proxied assets:</> %s MB",
+			number_format($totalStorage / 1e6, 2),
+		));
+	}
+
+	/**
+	 * @return array{int, int} The total files count and the total storage
+	 */
+	private function findProxiedAssetStats () : array
+	{
+		$files = Finder::create()
+			->in($this->assetProxy->getStoragePath())
+			->ignoreUnreadableDirs()
+			->files();
+
+		$filesCount = 0;
+		$totalStorage = 0;
+
+		foreach ($files as $file)
+		{
+			$totalStorage += $file->getSize();
+			++$filesCount;
+		}
+
+		return [
+			$filesCount,
+			$totalStorage,
+		];
 	}
 }
