@@ -1,7 +1,9 @@
-3.15.1 (unreleased)
+3.16.0 (unreleased)
 ======
 
 * (improvement) Bump dependencies.
+* (feature) Integrate Symfony webhooks and add global `storyblok` webhook.
+* (feature) Parse all supported types of webhooks and dispatch them as events.
 
 
 3.15.0
