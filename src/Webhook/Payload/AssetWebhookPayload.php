@@ -10,6 +10,7 @@ final readonly class AssetWebhookPayload extends AbstractWebhookPayload
 		WebhookAction $action,
 		string $text,
 		public int $assetId,
+		public string $assetPath,
 	)
 	{
 		parent::__construct($action, $text);

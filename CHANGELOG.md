@@ -7,6 +7,7 @@
 * (feature) Add automatic asset proxy.
 * (feature) Add ability to clear asset storage via CLI via `storyblok:assets:clear-proxy-storage`.
 * (improvement) Add asset proxy stats to debug command.
+* (feature) Automatically integrate into Storyblok webhooks to clear the image proxy storage.
 
 
 3.15.0

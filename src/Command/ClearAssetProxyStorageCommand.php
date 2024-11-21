@@ -36,7 +36,7 @@ class ClearAssetProxyStorageCommand extends Command
 		$io = new TorrStyle($input, $output);
 		$io->title("Storyblok: Clear Asset Proxy Storage");
 
-		$this->assetProxy->clearStorage();
+		$this->assetProxy->clearCompleteStorage();
 
 		$io->success("Done");
 

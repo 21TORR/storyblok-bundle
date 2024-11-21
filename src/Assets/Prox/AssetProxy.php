@@ -127,9 +127,21 @@ readonly class AssetProxy
 	/**
 	 *
 	 */
-	public function clearStorage () : void
+	public function clearCompleteStorage () : void
 	{
 		$this->filesystem->remove($this->storagePath);
+	}
+
+	/**
+	 *
+	 */
+	public function clearStorageFile (string $path) : void
+	{
+		// directly remove the whole directory
+		$dir = \dirname($path);
+		$this->filesystem->remove(
+			Path::join($this->storagePath, $dir),
+		);
 	}
 
 	/**
