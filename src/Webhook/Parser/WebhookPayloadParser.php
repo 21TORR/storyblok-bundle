@@ -215,7 +215,18 @@ final readonly class WebhookPayloadParser
 			return null;
 		}
 
-		return new AssetWebhookPayload($action, $text, $assetId);
+		if (!preg_match('~\nhttps://a\.storyblok\.com/f/\d+(?P<path>/.+)$~D', $text, $matches))
+		{
+			$this->logger->error("Storyblok Webhook, could not parse asset event: missing/invalid asset URL", [
+				"asset_id" => $assetId,
+				"payload" => $payload,
+				"text" => $text,
+			]);
+
+			return null;
+		}
+
+		return new AssetWebhookPayload($action, $text, $assetId, $matches["path"]);
 	}
 
 	/**
