@@ -1,4 +1,4 @@
-3.16.0 (unreleased)
+3.16.0
 ======
 
 * (improvement) Bump dependencies.
