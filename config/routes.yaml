@@ -5,9 +5,7 @@ storyblok.webhook:
         urlSecret: ~
 
 storyblok.asset-proxy:
-    path: /asset/{width}x{height}/{assetId}/{filename}
+    path: /asset/{path}
     controller: Torr\Storyblok\Assets\Controller\AssetProxyController::proxyAsset
     requirements:
-        width: \d*
-        height: \d*
-        assetId: \w+
+        path: .+?

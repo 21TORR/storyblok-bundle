@@ -16,13 +16,15 @@ class AssetProxyController extends AbstractController
 	public function proxyAsset (
 		AssetProxy $assetProxy,
 		Request $request,
-		string $width,
-		string $height,
-		string $assetId,
-		string $filename,
+		string $path,
 	) : Response
 	{
-		$path = \sprintf("%sx%s/%s/%s", $width, $height, $assetId, $filename);
+		// check for valid URLs
+		if (!preg_match('~^\d*x\d*\/\w+\/[^\/]+$~D', $path))
+		{
+			throw $this->createNotFoundException("File not found");
+		}
+
 		$filePath = $assetProxy->getFilePath($path);
 
 		if (null === $filePath)
