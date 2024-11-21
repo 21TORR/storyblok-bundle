@@ -143,10 +143,6 @@ final class RequestValidatorTest extends TestCase
 		);
 
 		$config = new StoryblokConfig(
-			spaceId: null,
-			managementToken: null,
-			contentToken: null,
-			localeLevel: 0,
 			webhookSecret: $secret,
 			allowUrlWebhookSecret: $allowUrlSecrets,
 		);

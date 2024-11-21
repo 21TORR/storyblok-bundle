@@ -19,3 +19,6 @@ services:
         $spaceId: !abstract set via config
         $managementToken: !abstract set via config
         $contentToken: !abstract set via config
+        $localeLevel: !abstract set via config
+        $webhookSecret: !abstract set via config
+        $allowUrlWebhookSecret: !abstract set via config
