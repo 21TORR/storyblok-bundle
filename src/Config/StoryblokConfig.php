@@ -13,6 +13,8 @@ final class StoryblokConfig
 		private readonly ?string $managementToken,
 		private readonly ?string $contentToken,
 		private readonly int $localeLevel,
+		public readonly ?string $webhookSecret,
+		public readonly bool $allowUrlWebhookSecret,
 	) {}
 
 	/**

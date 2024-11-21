@@ -1,0 +1,5 @@
+storyblok.webhook:
+    path: /webhook/{urlSecret}
+    controller: Torr\Storyblok\Controller\WebhookController::webhookEndpoint
+    defaults:
+        urlSecret: ~
