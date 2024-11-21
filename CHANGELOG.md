@@ -5,6 +5,7 @@
 * (feature) Integrate Symfony webhooks and add global `storyblok` webhook.
 * (feature) Parse all supported types of webhooks and dispatch them as events.
 * (feature) Add automatic asset proxy.
+* (feature) Add ability to clear asset storage via CLI via `storyblok:assets:clear-proxy-storage`.
 
 
 3.15.0

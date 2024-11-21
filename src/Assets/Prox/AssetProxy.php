@@ -123,4 +123,12 @@ readonly class AssetProxy
 			return false;
 		}
 	}
+
+	/**
+	 *
+	 */
+	public function clearStorage () : void
+	{
+		$this->filesystem->remove($this->storagePath);
+	}
 }
