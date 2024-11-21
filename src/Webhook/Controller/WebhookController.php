@@ -12,7 +12,7 @@ use Torr\Storyblok\Event\StoryblokWebhookEvent;
 use Torr\Storyblok\Webhook\Parser\WebhookPayloadParser;
 use Torr\Storyblok\Webhook\Request\RequestValidator;
 
-final class StoryblokWebhookController extends AbstractController
+final class WebhookController extends AbstractController
 {
 	/**
 	 * Handles the incoming webhook from Storyblok
