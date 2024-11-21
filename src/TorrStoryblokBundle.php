@@ -26,7 +26,9 @@ final class TorrStoryblokBundle extends Bundle
 					->setArgument('$spaceId', $config["space_id"])
 					->setArgument('$managementToken', $config["management_token"])
 					->setArgument('$contentToken', $config["content_token"])
-					->setArgument('$localeLevel', $config["locale_level"]);
+					->setArgument('$localeLevel', $config["locale_level"])
+					->setArgument('$webhookSecret', $config["webhook"]["secret"])
+					->setArgument('$allowUrlWebhookSecret', $config["webhook"]["allow_url_secret"]);
 			},
 			"storyblok",
 		);

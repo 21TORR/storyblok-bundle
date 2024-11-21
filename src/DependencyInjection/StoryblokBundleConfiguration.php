@@ -32,7 +32,7 @@ final class StoryblokBundleConfiguration implements ConfigurationInterface
 				->arrayNode("webhook")
 					->addDefaultsIfNotSet()
 					->children()
-						->scalarNode("webhook_secret")
+						->scalarNode("secret")
 							->info("The secret that is configured in the storyblok webhook")
 							->defaultNull()
 						->end()
