@@ -3,3 +3,11 @@ storyblok.webhook:
     controller: Torr\Storyblok\Webhook\Controller\WebhookController::webhookEndpoint
     defaults:
         urlSecret: ~
+
+storyblok.asset-proxy:
+    path: /asset/{width}x{height}/{assetId}/{filename}
+    controller: Torr\Storyblok\Assets\Controller\AssetProxyController::proxyAsset
+    requirements:
+        width: \d*
+        height: \d*
+        assetId: \w+
