@@ -1,6 +1,7 @@
-3.16.0
+3.15.0
 ======
 
+* (feature) Add integration for app validation from the hosting bundle.
 * (improvement) Bump dependencies.
 * (feature) Integrate Symfony webhooks and add global `storyblok` webhook.
 * (feature) Parse all supported types of webhooks and dispatch them as events.
@@ -8,12 +9,6 @@
 * (feature) Add ability to clear asset storage via CLI via `storyblok:assets:clear-proxy-storage`.
 * (improvement) Add asset proxy stats to debug command.
 * (feature) Automatically integrate into Storyblok webhooks to clear the image proxy storage.
-
-
-3.15.0
-======
-
-* (feature) Add integration for app validation from the hosting bundle.
 
 
 3.14.3
