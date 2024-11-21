@@ -22,3 +22,6 @@ services:
         $localeLevel: !abstract set via config
         $webhookSecret: !abstract set via config
         $allowUrlWebhookSecret: !abstract set via config
+
+    Torr\Storyblok\Assets\Proxy\AssetProxy:
+        $storagePath: '%kernel.project_dir%/var/storyblok/assets'

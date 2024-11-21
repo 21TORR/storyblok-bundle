@@ -4,6 +4,7 @@
 * (improvement) Bump dependencies.
 * (feature) Integrate Symfony webhooks and add global `storyblok` webhook.
 * (feature) Parse all supported types of webhooks and dispatch them as events.
+* (feature) Add automatic asset proxy.
 
 
 3.15.0
