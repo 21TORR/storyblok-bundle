@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Torr\Storyblok\Assets\Proxy\AssetProxy;
+use Torr\Storyblok\Assets\Url\AssetProxyUrlGenerator;
 
 /**
  * @final
@@ -15,10 +16,16 @@ class AssetProxyController extends AbstractController
 {
 	public function proxyAsset (
 		AssetProxy $assetProxy,
+		AssetProxyUrlGenerator $proxyUrlGenerator,
 		Request $request,
 		string $path,
 	) : Response
 	{
+		if (!$proxyUrlGenerator->verifyProxyUrlRequest($request))
+		{
+			throw $this->createNotFoundException("Invalid request");
+		}
+
 		// check for valid URLs
 		if (!preg_match('~^\d*x\d*\/\w+\/[^\/]+$~D', $path))
 		{

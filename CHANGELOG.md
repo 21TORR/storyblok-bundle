@@ -1,3 +1,11 @@
+3.16.0
+======
+
+* (feature) Add `AssetProxyUrlGenerator` to rewrite asset URLs.
+* (feature) Sign asset proxy URLs for more secure proxying.
+
+
+
 3.15.0
 ======
 
