@@ -1,3 +1,9 @@
+3.16.1
+======
+
+* (bug) Fix invalid directory name.
+
+
 3.16.0
 ======
 
