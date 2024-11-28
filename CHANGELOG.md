@@ -2,6 +2,7 @@
 ======
 
 * (improvement) Support `description` in components.
+* (improvement) Improve diff header description.
 
 
 3.16.1
