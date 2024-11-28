@@ -1,7 +1,7 @@
-3.16.2
+3.17.0
 ======
 
-* (improvement) Support `description` in components.
+* (feature) Support `description` in components.
 * (improvement) Improve diff header description.
 * (bug) Properly HTML-encode the preview template of components.
 
