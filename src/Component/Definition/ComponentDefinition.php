@@ -40,6 +40,10 @@ final class ComponentDefinition
 		 * A hex-code, including the `#` that provides a background color for the component's icon.
 		 */
 		public readonly ?string $iconBackgroundColor = null,
+		/**
+		 * Description used in the Admin UI only, to describe the component
+		 */
+		public readonly ?string $description = null,
 	)
 	{
 		if (null !== $this->iconBackgroundColor && !preg_match('~^#(\\d{3}|\\d{6})$~', $this->iconBackgroundColor))

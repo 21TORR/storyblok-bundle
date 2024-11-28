@@ -1,3 +1,9 @@
+3.16.2
+======
+
+* (improvement) Support `description` in components.
+
+
 3.16.1
 ======
 

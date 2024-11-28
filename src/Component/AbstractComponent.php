@@ -289,6 +289,7 @@ abstract class AbstractComponent
 			"preview_field" => $previewField,
 			"color" => $definition->iconBackgroundColor,
 			"icon" => $definition->icon?->value,
+			"description" => $definition->description,
 			...$this->getComponentType()->toManagementApiData(),
 		];
 	}
