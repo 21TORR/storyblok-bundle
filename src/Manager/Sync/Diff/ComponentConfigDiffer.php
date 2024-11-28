@@ -51,8 +51,8 @@ final class ComponentConfigDiffer
 
 		// add header here, so that we can cleanly check for an empty diff above
 		return $this->parseDiffOutputLines([
-			"+++ Modified local Config",
-			"--- Currently in Storyblok",
+			"+++ Adding in Storyblok",
+			"--- Removing in Storyblok",
 			...$lines,
 		]);
 	}

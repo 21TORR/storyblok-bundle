@@ -285,10 +285,16 @@ abstract class AbstractComponent
 			"display_name" => $this->getDisplayName(),
 			"schema" => $this->normalizeFields($this->getFields()->getRootFields()),
 			"image" => $definition->previewScreenshotUrl,
-			"preview_tmpl" => $definition->previewTemplate,
+			"preview_tmpl" => null !== $definition->previewTemplate
+				? htmlspecialchars(
+					$definition->previewTemplate,
+					\ENT_NOQUOTES | \ENT_SUBSTITUTE | \ENT_HTML5,
+				)
+				: null,
 			"preview_field" => $previewField,
 			"color" => $definition->iconBackgroundColor,
 			"icon" => $definition->icon?->value,
+			"description" => $definition->description,
 			...$this->getComponentType()->toManagementApiData(),
 		];
 	}
